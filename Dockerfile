@@ -5,13 +5,13 @@ FROM node:14
 WORKDIR /app
 
 # Copy package.json and package-lock.json to the container
-COPY package*.json ./
+COPY demo/package*.json ./
 
 # Install project dependencies
 RUN npm install
 
 # Copy the entire project to the container
-COPY . .
+COPY demo .
 
 # Build the project
 RUN npm run build
